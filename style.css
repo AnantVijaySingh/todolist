@@ -6,15 +6,26 @@
 		  display: inline;
 		}
 
-/*.mdl-layout__header{
-	background-color: white;
-	color: #0D47A1;
+.mdl-layout__header, .mdl-layout__drawer-button{
+/*	background-color: white;*/
+	color: #000000;
 }
 
 .mdl-layout__header-row .mdl-navigation__link, .mdl-layout__header .mdl-layout__drawer-button{
 	color: #0D47A1;
 }
 
+.mdl-layout__header-row{
+	padding: 0px 40px 0px 40px;
+}
+
+.mdl-button{
+	height: 46px;
+	min-width: 64px;
+	font-size: 14px;
+	text-transform: none;
+}
+/*
 .mdl-layout__header-row .mdl-navigation__link{
 	line-height: 30px;
 }
