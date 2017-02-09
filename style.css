@@ -19,12 +19,30 @@
 	padding: 0px 40px 0px 40px;
 }
 
-.mdl-button{
-	height: 46px;
+.mdl-layout__content .mdl-button{
+	height: 36px;
 	min-width: 64px;
 	font-size: 14px;
 	text-transform: none;
 }
+
+/*.mdl-button .mdl-badge[data-badge]:after, .mdl-badge[data-badge]:after{
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left:0px;
+	margin: auto 0px;
+}
+*/
+.mdl-button--raised .mdl-badge[data-badge]:after{
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left:0px;
+	margin: auto 0px;
+}
+
+
 /*
 .mdl-layout__header-row .mdl-navigation__link{
 	line-height: 30px;

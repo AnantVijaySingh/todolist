@@ -45,21 +45,31 @@
 	  </div> -->
 	  <main class="mdl-layout__content">
 	  	<div class="mdl-grid">
-		  <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--1-offset-desktop">
+		  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--3-offset-desktop mdl-cell--1-offset-tablet">
 		  		  	<!-- Simple Textfield -->
 			<form action="#">
 			 <div class="mdl-textfield mdl-js-textfield">
-			   <input class="mdl-textfield__input" type="text" id="sample1">
-			   <label class="mdl-textfield__label" for="sample1">Text...</label>
+			   <input class="mdl-textfield__input" type="text" id="taskTextField">
+			   <label class="mdl-textfield__label" for="sample1">Task...</label>
 			 </div>
-			 	<!-- Colored FAB button with ripple -->
-			 	<button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-				  <!-- <i class="material-icons">add</i> -->
-				  <!-- Number badge -->
-				  <span class="mdl-badge" data-badge="4">Inbox Test Button</span>
+<!-- 				<button class="mdl-button mdl-js-button mdl-chip">
+				<span class="mdl-chip__text">Add to Work</span>
+				<span class="mdl-badge" data-badge="4"></span>
 				</button>
-				<!-- Number badge -->
-				<span class="mdl-badge" data-badge="4">Inbox</span>
+				<button class="mdl-chip">
+				<span class="mdl-chip__text">Add to Home</span>
+				<span class="mdl-badge" data-badge="3"></span>
+				</button> -->
+				<!-- Raised button with ripple -->
+				<button class="mdl-button mdl-js-button mdl-button--raised" id="todayButton">
+				  <span>Today&nbsp<span class="mdl-badge" data-badge="3"></span></span>
+				</button>
+				<button class="mdl-button mdl-js-button mdl-button--raised" id="tomorrowButton">
+				  <span>Tomorrow&nbsp<span class="mdl-badge" data-badge="4"></span></span>
+				</button>
+				<button class="mdl-button mdl-js-button mdl-button--raised" id="weekButton">
+				  <span>Week&nbsp<span class="mdl-badge" data-badge="1"></span></span>
+				</button>
 			</form>
 		  </div>
 		</div>
