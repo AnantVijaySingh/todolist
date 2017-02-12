@@ -26,6 +26,12 @@
 	text-transform: none;
 }
 
+a.mdl-buttom-custom{
+	font-size: 14px;
+	color: grey;
+	padding: 3px;
+}
+
 /*.mdl-button .mdl-badge[data-badge]:after, .mdl-badge[data-badge]:after{
 	top: 0px;
 	bottom: 0px;
@@ -42,7 +48,7 @@
 	margin: auto 0px;
 }
 
-.mdl-card-task.mdl-card {
+.mdl-card-task.mdl-card-custom {
   width: 100%;
 }
 .mdl-card-task > .mdl-card__title {
@@ -54,13 +60,13 @@
   color: black;
 }
 
-.mdl-card {
-  display: -webkit-flex;
+.mdl-card-custom {
+/*  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column;
+          flex-direction: column;*/
   font-size: 16px;
   font-weight: 400;
   min-height: 200px;
@@ -70,18 +76,18 @@
   position: relative;
   background: rgb(255,255,255);
   border-radius: 2px;
-  box-sizing: border-box; }
-
-.mdl-card{
-	max-height: 80px;
-	min-height: 60px;
+  box-sizing: border-box; 
+  max-height: 80px;
+  min-height: 60px;
 }
 
 .mdl-card__actions{
 	padding: 2px;
+	box-sizing: border-box;
 }
 
 .mdl-card__supporting-text{
+	box-sizing: border-box;
 	padding: 10px;
 }
 

@@ -4,6 +4,12 @@ var tomorrowButton
 var weekButton
 
 window.onload = function() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(displayLocation);
+	} else {
+		alert("Location Access Denied");
+	}
+
 	taskTextField = document.getElementById('taskTextField');
 	todayButton = document.getElementById('todayButton');
 	tomorrowButton = document.getElementById('tomorrowButton');
@@ -13,6 +19,15 @@ window.onload = function() {
 	// tomorrowButton.onclick = handleTomorrowButtonClick;
 	// weekButton.onclick = handleWeekButtonClick;
 }
+
+function displayLocation(position){
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+
+	var span = document.getElementById("userLocation");
+	span.innerHTML = "latitude: "+latitude+" longitude: "+longitude;
+}
+
 
 function handleTodayButtonClick(){
 	var userTask = taskTextField.value;
