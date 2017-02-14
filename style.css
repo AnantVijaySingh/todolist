@@ -21,7 +21,7 @@
 
 .mdl-layout__content .mdl-button{
 	height: 36px;
-	min-width: 64px;
+	width: 120px;
 	font-size: 14px;
 	text-transform: none;
 }
@@ -48,18 +48,9 @@ a.mdl-buttom-custom{
 	margin: auto 0px;
 }
 
-.mdl-card-task.mdl-card-custom {
-  width: 100%;
+.mdl-button{
+	margin-left: 5px;
 }
-.mdl-card-task > .mdl-card__title {
-  color: #fff;
-  height: 40px;
-  background: url('../assets/demos/welcome_card.jpg') center / cover;
-}
-.mdl-card-task > .mdl-card__menu {
-  color: black;
-}
-
 .mdl-card-custom {
 /*  display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,13 +73,58 @@ a.mdl-buttom-custom{
 }
 
 .mdl-card__actions{
-	padding: 2px;
+/*	padding: 2px;*/
 	box-sizing: border-box;
 }
 
 .mdl-card__supporting-text{
 	box-sizing: border-box;
-	padding: 10px;
+/*	padding: 10px;*/
+}
+
+.mdl-button-custon-icon{
+  background: transparent;
+  border: none;
+  border-radius: 2px;
+  color: rgb(0,0,0);
+  position: relative;
+  height: 36px;
+  margin: 0;
+  min-width: 36px;
+  padding: 5px;
+  display: inline-block;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
+}
+
+.demo-card-wide.mdl-card {
+  width: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('https://getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.mdl-textfield{
+	width: 100%;
+	padding: 20px;
 }
 
 /*
