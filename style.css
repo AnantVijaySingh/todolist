@@ -19,17 +19,12 @@
 	padding: 0px 40px 0px 40px;
 }
 
-.mdl-layout__content .mdl-button{
+.mdl-layout__content .mdl-button-custom{
 	height: 36px;
 	width: 120px;
 	font-size: 14px;
+	margin-left: 5px;
 	text-transform: none;
-}
-
-a.mdl-buttom-custom{
-	font-size: 14px;
-	color: grey;
-	padding: 3px;
 }
 
 /*.mdl-button .mdl-badge[data-badge]:after, .mdl-badge[data-badge]:after{
@@ -48,9 +43,6 @@ a.mdl-buttom-custom{
 	margin: auto 0px;
 }
 
-.mdl-button{
-	margin-left: 5px;
-}
 .mdl-card-custom {
 /*  display: -webkit-flex;
   display: -ms-flexbox;
@@ -71,6 +63,34 @@ a.mdl-buttom-custom{
   max-height: 80px;
   min-height: 60px;
 }
+
+/*.mdl-button-custom {
+  background: transparent;
+  border: none;
+  border-radius: 2px;
+  color: rgb(0,0,0);
+  position: relative;
+  height: 36px;
+  margin: 0;
+  min-width: 64px;
+  padding: 0 16px;
+  display: inline-block;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle; 
+}*/
 
 .mdl-card__actions{
 /*	padding: 2px;*/
