@@ -19,11 +19,9 @@ window.onload = function() {
 
 function handleTodayButtonClick(){
 	var userTask = taskTextField.value;
-	alert(userTask);
 	var taskType = "today";
 	var newUserTask = new TaskObject(userTask,taskType);
-	newUserTask.createTaskCard();
-	alert(userTask);
+	createTaskCard(newUserTask);
 }
 // ---------- Task Object Constructor ----------
 // ----- add functioanlity for time -----
@@ -34,11 +32,15 @@ function TaskObject(Text,Type){
 	this.taskProgressStatus = "notStarted";		//Possible statues: notStarted, inProgress, paused
 	this.timeStamp = new Date().getTime();		// Compare with current time to determine is the task counts under today or backlog.
 												//In conjuction with week paramter, add to this week initially and to backlog only if its the next week
-	this.createTaskCard = function(this.Text){
-		var taskOuterDivElement = document.createElement('div');
-		taskOuterDivElement = taskText;
-		taskListElement.appendChild(taskOuterDivElement);
-	};
+}
+
+function createTaskCard(object) {
+	var taskOuterDivElement = document.createElement("div");
+	var p = document.createElement("p");
+	var content = document.createTextNode(object.taskText);
+	p.appendChild(content);
+	taskOuterDivElement.appendChild(p);
+	taskListElement.appendChild(taskOuterDivElement);
 }
 
 // ---------- DOM Element Creator Fucntion ----------
