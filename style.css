@@ -46,10 +46,12 @@
 .mdl-card__actions{
 /*	padding: 2px;*/
 	box-sizing: border-box;
+	height: 50px;
 }
 
 .mdl-card__supporting-text{
 	box-sizing: border-box;
+	color: black;
 /*	padding: 10px;*/
 }
 
@@ -83,6 +85,7 @@
 
 .mdl-card-custom.mdl-card {
   width: 100%;
+  margin-top: 10px;
 }
 .mdl-card-custom > .mdl-card__title {
   color: #fff;
