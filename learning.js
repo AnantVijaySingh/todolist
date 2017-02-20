@@ -65,6 +65,8 @@ var exampleObject1 = new exampleConstructor("property1Value","property2Value") /
 
 //common objects in Javascript
 
+// --------------------- HTML Requests in Javascript --------------------------
+
 var url = "http://someserver.com/data.json"; //JSON file type
 
 var request = new XMLHttpRequest(); // Creates a new HTTP request object
@@ -79,7 +81,11 @@ request.onload = function () { // when the data is received from the server
 
 request.server("something"); // data or request that needs to be sent to the server
 
+// ------------------ JSON Objects --------------------------------------------
 
+JSON.stringify{objectToBeConvertedToJSON}; //concerts Javascript object into a json string
+
+JSON.parse(jsonString); // Returns a javascript object
 
 
 window 
