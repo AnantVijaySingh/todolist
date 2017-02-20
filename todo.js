@@ -36,7 +36,10 @@ function TaskObject(Text,Type){
 
 function createTaskCard(object) {
 	var taskOuterDivElement = document.createElement("div");
-	taskOuterDivElement.setAttribute("class","demo-card-wide mdl-card mdl-shadow--2dp")
+	var innerDivElement1 = document.createElement("div");
+	var innerDivElement2 = document.createElement("div");
+	taskOuterDivElement.setAttribute("class","mdl-card-custom mdl-card mdl-shadow--2dp")
+	innerDivElement1.setAttribute("class","mdl-card__supporting-text")
 	var p = document.createElement("p");
 	var content = document.createTextNode(object.taskText);
 	p.appendChild(content);

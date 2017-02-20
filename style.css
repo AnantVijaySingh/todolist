@@ -43,6 +43,68 @@
 	margin: auto 0px;
 }
 
+.mdl-card__actions{
+/*	padding: 2px;*/
+	box-sizing: border-box;
+	height: 50px;
+}
+
+.mdl-card__supporting-text{
+	box-sizing: border-box;
+	color: black;
+/*	padding: 10px;*/
+}
+
+.mdl-button-custon-icon{
+  background: transparent;
+  border: none;
+  border-radius: 2px;
+  color: rgb(0,0,0);
+  position: relative;
+  height: 36px;
+  margin: 0;
+  min-width: 36px;
+  padding: 5px;
+  display: inline-block;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
+}
+
+.mdl-card-custom.mdl-card {
+  width: 100%;
+  margin-top: 10px;
+}
+.mdl-card-custom > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('https://getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+}
+.mdl-card-custom > .mdl-card__menu {
+  color: #fff;
+}
+
+.mdl-textfield{
+	width: 100%;
+	padding: 20px;
+}
+
+.mdl-card{
+	min-height: 100px;
+}
+
 /*.mdl-card-custom {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,65 +153,6 @@
   line-height: 36px;
   vertical-align: middle; 
 }*/
-
-.mdl-card__actions{
-/*	padding: 2px;*/
-	box-sizing: border-box;
-}
-
-.mdl-card__supporting-text{
-	box-sizing: border-box;
-/*	padding: 10px;*/
-}
-
-.mdl-button-custon-icon{
-  background: transparent;
-  border: none;
-  border-radius: 2px;
-  color: rgb(0,0,0);
-  position: relative;
-  height: 36px;
-  margin: 0;
-  min-width: 36px;
-  padding: 5px;
-  display: inline-block;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 0;
-  overflow: hidden;
-  will-change: box-shadow;
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  line-height: 36px;
-  vertical-align: middle;
-}
-
-.mdl-card-custom.mdl-card {
-  width: 100%;
-}
-.mdl-card-custom > .mdl-card__title {
-  color: #fff;
-  height: 176px;
-  background: url('https://getmdl.io/assets/demos/welcome_card.jpg') center / cover;
-}
-.mdl-card-custom > .mdl-card__menu {
-  color: #fff;
-}
-
-.mdl-textfield{
-	width: 100%;
-	padding: 20px;
-}
-
-.mdl-card{
-	min-height: 100px;
-}
 
 /*
 .mdl-layout__header-row .mdl-navigation__link{
