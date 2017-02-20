@@ -65,6 +65,23 @@ var exampleObject1 = new exampleConstructor("property1Value","property2Value") /
 
 //common objects in Javascript
 
+var url = "http://someserver.com/data.json"; //JSON file type
+
+var request = new XMLHttpRequest(); // Creates a new HTTP request object
+
+request.open("GET", url); // "GET" - standard way of getting http data, url to get the data from 
+
+request.onload = function () { // when the data is received from the server
+	if(request.status == 200){ // response code 200 means data was recevied successfully
+		alert(request.responseText);
+	}
+}
+
+request.server("something"); // data or request that needs to be sent to the server
+
+
+
+
 window 
 {
 	document
