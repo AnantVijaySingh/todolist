@@ -88,6 +88,37 @@ JSON.stringify{objectToBeConvertedToJSON}; //concerts Javascript object into a j
 JSON.parse(jsonString); // Returns a javascript object
 
 
+
+
+
+//------------ Script tag can be used to retrive data wrapped in a function as a javascript object using ?callback=wrapperFunction --------
+//------------ The script tag can be created/replaced again and again to recall data from the server --------------------------------------
+
+window.onload = function(){
+	setInterval(handleRefresh,3000); // returns an id that can be used to stop it ----------------------------
+}
+
+function handleRefresh(){
+	var url = "http://gumball.wickedlysmart.com/?callback=updateSales" + "&random=" + (new Date()).getTime();
+
+	var newScriptElement = document.createElement("script");
+	newScriptElement.setAttribute("src",url);
+	newScriptElement.setAttribute("id","jsonp");
+
+	var oldScriptElement = document.getElementById("jsonp");
+	var head = document.getElementsByTagName("head")[0]; // ------- returns an array of elements ------------------
+	if(oldScriptElement == null){
+		head.appendChild(newScriptElement);
+	}
+	else{
+		head.replaceChild(newScriptElement,oldScriptElement);
+	}
+
+}
+
+
+
+
 window 
 {
 	document
