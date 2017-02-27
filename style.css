@@ -136,6 +136,18 @@
   vertical-align: middle; 
   float: right;
 }
+
+#deleteButton:hover {
+	color: #E64A19;
+}
+
+#mailButton:hover {
+	color: #303F9F;
+}
+
+#doneButton:hover {
+	color: #388E3C;
+}
 /*.mdl-card-custom {
   display: -webkit-flex;
   display: -ms-flexbox;

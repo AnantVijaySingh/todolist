@@ -3,6 +3,7 @@ var todayButton
 var tomorrowButton
 var weekButton
 var taskListElement
+var userTaskMap
 
 window.onload = function() {
 
@@ -11,6 +12,7 @@ window.onload = function() {
 	tomorrowButton = document.getElementById('tomorrowButton');
 	weekButton = document.getElementById('weekButton');
 	taskListElement = document.getElementById('taskList');
+	userTaskMap = new Map();
 
 	todayButton.onclick = handleTodayButtonClick;
 	// tomorrowButton.onclick = handleTomorrowButtonClick;
@@ -18,6 +20,10 @@ window.onload = function() {
 }
 
 function handleTodayButtonClick(){
+	var span = todayButton.childNodes;
+	var span2 = span[1].childNodes;
+	var newCount = parseInt(span2[1].getAttribute("data-badge"));
+	span2[1].setAttribute("data-badge",newCount+1);
 	var userTask = taskTextField.value;
 	var taskType = "today";
 	var newUserTask = new TaskObject(userTask,taskType);
@@ -32,6 +38,7 @@ function TaskObject(Text,Type){
 	this.taskProgressStatus = "notStarted";		//Possible statues: notStarted, inProgress, paused
 	this.timeStamp = new Date().getTime();		// Compare with current time to determine is the task counts under today or backlog.
 												//In conjuction with week paramter, add to this week initially and to backlog only if its the next week
+												//Using timestamp as a div id to help manupilate the DOM
 }
 
 function createTaskCard(object) {
@@ -47,6 +54,7 @@ function createTaskCard(object) {
 	var mailButtonIcon = document.createElement("i");
 
 	taskOuterDivElement.setAttribute("class","mdl-card-custom mdl-card mdl-shadow--2dp");
+	taskOuterDivElement.setAttribute("id",object.timeStamp);
 	innerDivElement1.setAttribute("class","mdl-card__supporting-text");
 	innerDivElement2.setAttribute("class","mdl-card__actions mdl-card--border");
 	innerSpan.setAttribute("class","timeStamp");
@@ -86,8 +94,6 @@ function createTaskCard(object) {
 	taskOuterDivElement.appendChild(innerDivElement1);
 	taskOuterDivElement.appendChild(innerDivElement2);
 	taskListElement.appendChild(taskOuterDivElement);
-
-	var p = document.createElement("p");
 }
 
 // ---------- DOM Element Creator Fucntion ----------
