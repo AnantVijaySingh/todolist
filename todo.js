@@ -20,14 +20,19 @@ window.onload = function() {
 }
 
 function handleTodayButtonClick(){
-	var span = todayButton.childNodes;
-	var span2 = span[1].childNodes;
-	var newCount = parseInt(span2[1].getAttribute("data-badge"));
-	span2[1].setAttribute("data-badge",newCount+1);
 	var userTask = taskTextField.value;
-	var taskType = "today";
-	var newUserTask = new TaskObject(userTask,taskType);
-	createTaskCard(newUserTask);
+	if (userTask !="") {
+		var taskType = "today";
+		var newUserTask = new TaskObject(userTask,taskType);
+		userTaskMap.set(newUserTask.timeStamp,newUserTask);
+		console.log(userTaskMap);
+		createTaskCard(newUserTask);
+		var span = todayButton.childNodes;
+		var span2 = span[1].childNodes;
+		var newCount = parseInt(span2[1].getAttribute("data-badge"));
+		span2[1].setAttribute("data-badge",newCount+1);
+	}
+	
 }
 // ---------- Task Object Constructor ----------
 // ----- add functioanlity for time -----
