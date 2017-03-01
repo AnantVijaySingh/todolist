@@ -12,6 +12,7 @@ window.onload = function() {
 	tomorrowButton = document.getElementById('tomorrowButton');
 	weekButton = document.getElementById('weekButton');
 	taskListElement = document.getElementById('taskList');
+	doneButton = document.getElementById('doneButton');
 	userTaskMap = new Map();
 
 	todayButton.onclick = handleTodayButtonClick;
@@ -65,6 +66,7 @@ function createTaskCard(object) {
 	innerSpan.setAttribute("class","timeStamp");
 	doneButton.setAttribute("class","mdl-button mdl-js-button mdl-button--icon mdl-button--colored button-icons");
 	doneButton.setAttribute("id","doneButton");
+	doneButton.setAttribute("onclick","handleDoneButtonClick(this.parentElement.parentElement.id)");
 	deleteButton.setAttribute("class","mdl-button mdl-js-button mdl-button--icon mdl-button--colored button-icons");
 	deleteButton.setAttribute("id","deleteButton");
 	mailButton.setAttribute("class","mdl-button mdl-js-button mdl-button--icon mdl-button--colored button-icons");
@@ -104,5 +106,13 @@ function createTaskCard(object) {
 // ---------- DOM Element Creator Fucntion ----------
 function taskCard(TaskObject){
 	var parentElement = document.getElementById("taskList");
+}
+
+// ---------- Task Card Actions ---------------------
+function handleDoneButtonClick(divElement){
+	console.log(divElement);
+	console.log(document.getElementById(divElement).firstChild);
+	var taskTextDiv = document.getElementById(divElement).firstChild;
+	taskTextDiv.setAttribute("style","text-decoration: line-through");
 }
 
