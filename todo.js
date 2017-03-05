@@ -69,6 +69,7 @@ function createTaskCard(object) {
 	doneButton.setAttribute("onclick","handleDoneButtonClick(this.parentElement.parentElement.id)");
 	deleteButton.setAttribute("class","mdl-button mdl-js-button mdl-button--icon mdl-button--colored button-icons");
 	deleteButton.setAttribute("id","deleteButton");
+	deleteButton.setAttribute("onclick","handleDeleteButtonClick(this.parentElement.parentElement.id)");
 	mailButton.setAttribute("class","mdl-button mdl-js-button mdl-button--icon mdl-button--colored button-icons");
 	mailButton.setAttribute("id","mailButton");
 	doneButtonIcon.setAttribute("class","material-icons");
@@ -114,5 +115,11 @@ function handleDoneButtonClick(divElement){
 	console.log(document.getElementById(divElement).firstChild);
 	var taskTextDiv = document.getElementById(divElement).firstChild;
 	taskTextDiv.setAttribute("style","text-decoration: line-through");
+}
+
+function handleDeleteButtonClick(divElement){
+	var elem = document.getElementById(divElement);
+	console.log(elem.getAttribute('id'));
+	elem.parentNode.removeChild(elem);
 }
 
