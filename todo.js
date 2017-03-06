@@ -28,19 +28,31 @@ function handleTodayButtonClick(){
 		userTaskMap.set(newUserTask.timeStamp,newUserTask);
 		console.log(userTaskMap);
 		createTaskCard(newUserTask);
-		var span = todayButton.childNodes;
-		var span2 = span[1].childNodes;
-		var newCount = parseInt(span2[1].getAttribute("data-badge"));
-		span2[1].setAttribute("data-badge",newCount+1);
+		increment(todayButton);
 	}
 	
 }
+
+function increment(taskType){
+	var span = taskType.childNodes;
+	var span2 = span[1].childNodes;
+	var newCount = parseInt(span2[1].getAttribute("data-badge"));
+	span2[1].setAttribute("data-badge",newCount+1);
+}
+
+function decrement(taskType){
+	var span = taskType.childNodes;
+	var span2 = span[1].childNodes;
+	var newCount = parseInt(span2[1].getAttribute("data-badge"));
+	span2[1].setAttribute("data-badge",newCount-1);
+}
+
 // ---------- Task Object Constructor ----------
 // ----- add functioanlity for time -----
 function TaskObject(Text,Type){
 	this.taskText = Text;
 	this.taskType = Type;
-	this.taskCompleteStatus = "incomplete";		//Possible statues: incomplete, complete
+	this.taskCompleteStatus = "todo";		//Possible statues: incomplete, complete
 	this.taskProgressStatus = "notStarted";		//Possible statues: notStarted, inProgress, paused
 	this.timeStamp = new Date().getTime();		// Compare with current time to determine is the task counts under today or backlog.
 												//In conjuction with week paramter, add to this week initially and to backlog only if its the next week
@@ -102,6 +114,9 @@ function createTaskCard(object) {
 	taskOuterDivElement.appendChild(innerDivElement1);
 	taskOuterDivElement.appendChild(innerDivElement2);
 	taskListElement.appendChild(taskOuterDivElement);
+
+	// doneButton.onclick = handleDoneButtonClick.bind(taskOuterDivElement.id); // Use Apply Call Bind to set onlick property for buttons
+	// deleteButton.onclick = handleDeleteButtonClick.bind(taskOuterDivElement.id);
 }
 
 // ---------- DOM Element Creator Fucntion ----------
@@ -112,14 +127,48 @@ function taskCard(TaskObject){
 // ---------- Task Card Actions ---------------------
 function handleDoneButtonClick(divElement){
 	console.log(divElement);
-	console.log(document.getElementById(divElement).firstChild);
+	console.log(userTaskMap.get(parseInt(divElement)));
+	var object = userTaskMap.get(parseInt(divElement));
 	var taskTextDiv = document.getElementById(divElement).firstChild;
-	taskTextDiv.setAttribute("style","text-decoration: line-through");
+	if (object.taskCompleteStatus == "todo") {
+		taskTextDiv.setAttribute("style","text-decoration: line-through");
+		object.taskCompleteStatus = "done";
+		console.log(userTaskMap.get(parseInt(divElement)));
+		var object = userTaskMap.get(parseInt(divElement));
+		switch(object.taskType) {
+	    case 'today':
+	        decrement(todayButton);
+	        break;
+	    case 'tomorrow':
+	        decrement(tomorrowButton);
+	        break;
+	    case 'week':
+	        decrement(weekButton);
+	        break;
+	    default:
+	        console.log("Flow break");
+	    }
+	}
 }
 
 function handleDeleteButtonClick(divElement){
-	var elem = document.getElementById(divElement);
-	console.log(elem.getAttribute('id'));
-	elem.parentNode.removeChild(elem);
+	var deleteDiv = document.getElementById(divElement);
+	deleteDiv.parentNode.removeChild(deleteDiv);
+	var object = userTaskMap.get(parseInt(divElement));
+	if (object.taskCompleteStatus == "todo") {
+		switch(object.taskType) {
+	    case 'today':
+	        decrement(todayButton);
+	        break;
+	    case 'tomorrow':
+	        decrement(tomorrowButton);
+	        break;
+	    case 'week':
+	        decrement(weekButton);
+	        break;
+	    default:
+	        console.log("Flow break");
+	    }
+	}
 }
 
