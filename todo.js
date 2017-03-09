@@ -21,7 +21,7 @@ window.onload = function() {
 }
 
 function handleTodayButtonClick(){
-	var userTask = taskTextField.value;
+	var userTask = taskTextField.value; // ------------------- Sanatize the input --------------------
 	if (userTask !="") {
 		var taskType = "today";
 		var newUserTask = new TaskObject(userTask,taskType);
